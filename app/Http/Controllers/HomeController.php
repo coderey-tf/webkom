@@ -6,6 +6,7 @@ use App\Models\FileSupport;
 use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\StrukturOrganisasi;
+use App\Models\Matakuliah;
 
 class HomeController extends Controller
 {
@@ -13,20 +14,28 @@ class HomeController extends Controller
     {
         $posts = Post::with("kategori")->latest()->take(3)->get();
         return view('index', [
-            "title" => "Matakuliah Umum",
+            "title" => "Home",
             "posts" => $posts
         ]);
     }
 
+    public function about()
+    {
+        return view('about', [
+            "title" => "About"
+        ]);
+    }
     public function struktur()
     {
-        $koordinator = StrukturOrganisasi::with("dosen")->where('jabatan', 'like', '%Ketua%')->first();
-        $struktur = StrukturOrganisasi::with("dosen")->get();
-        $struktur = $struktur->except([$koordinator->id]);
+        // $koordinator = StrukturOrganisasi::with("dosen")->where('jabatan', 'like', '%Ketua%')->first();
+        $struktur = Matakuliah::with("listDosen.struktur")->get();
+        // $struktur = $struktur->except([$koordinator->id]);
+
+        // dd($struktur[0]->listDosen[0]->struktur);
 
         return view('struktur', [
             "title" => "Struktur Organisasi",
-            "koordinator" => $koordinator,
+            // "koordinator" => $koordinator,
             "listStruktur" => $struktur
         ]);
     }

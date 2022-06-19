@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [App\Http\Controllers\HomeController::class, "index"])->name("home");
+Route::get('/about', [App\Http\Controllers\HomeController::class, "about"])->name("about");
 Route::get('/struktur', [App\Http\Controllers\HomeController::class, "struktur"])->name("struktur");
 Route::get('/gallery', [App\Http\Controllers\HomeController::class, "gallery"])->name("gallery");
 Route::get('/download', [App\Http\Controllers\HomeController::class, "download"])->name("download");

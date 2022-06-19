@@ -19,7 +19,7 @@ class Dosen extends Model
 
     public function struktur()
     {
-        return $this->hasMany(StrukturOrganisasi::class);
+        return $this->hasOne(StrukturOrganisasi::class);
     }
 
     public static function boot()

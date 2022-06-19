@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class Matakuliah extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory;
 
-    protected $fillable = ["nama", "detail", "slug"];
+    protected $fillable = ["nama"];
 
     public function listDosen()
     {
@@ -47,12 +47,12 @@ class Matakuliah extends Model
         });
     }
 
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'nama'
-            ]
-        ];
-    }
+    // public function sluggable(): array
+    // {
+    //     return [
+    //         'slug' => [
+    //             'source' => 'nama'
+    //         ]
+    //     ];
+    // }
 }

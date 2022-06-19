@@ -1,13 +1,10 @@
-<title>{{ $title }} | MKU</title>
-<meta property="og:title" content="{{ $title }} | MKU" />
-<meta name="twitter:title" content="{{ $title }} | MKU" />
+<title>{{ $title }} | Komjensud</title>
+<meta property="og:title" content="{{ $title }} | Komjensud" />
+<meta name="twitter:title" content="{{ $title }} | Komjensud" />
 
-<meta name="description"
-  content="{{ $description }}">
-<meta property="og:description"
-  content="{{ $description }}" />
-<meta name="twitter:description"
-  content="{{ $description }}" />
+<meta name="description" content="{{ $description }}">
+<meta property="og:description" content="{{ $description }}" />
+<meta name="twitter:description" content="{{ $description }}" />
 
 <meta name="image" content="{{ $image }}" />
 <meta property="og:image" content="{{ $image }}" />
@@ -20,10 +17,9 @@
 <meta property="og:url" content={{ Request::fullUrl() }} />
 <meta property="og:site_name" content='MKU UPN "Veteran" Jawa Timur' />
 
-<meta name="keywords"
-  content="{{ $keywords }}" />
+<meta name="keywords" content="{{ $keywords }}" />
 <link rel="canonical" href="{{ Request::fullUrl() }}" />
 
 @isset($article)
-<meta property="og:type" content="article" />
+    <meta property="og:type" content="article" />
 @endisset
